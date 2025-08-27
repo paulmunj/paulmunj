@@ -1,0 +1,48 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk drives
+.Spotlight-V100
+.Trashes
+
+# macOS specific metadata files
+.fseventsd
+.apdisk
+
+# Node.js / JS projects
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build output
+dist/
+build/
+.cache/
+*.log
+
+# Env & secrets
+.env
+.env.*
+*.pem
+
+# VS Code
+.vscode/
+.history/
+
+# Other common stuff
+*.swp
+*.swo
+*.tmp
