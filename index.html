@@ -142,7 +142,7 @@
 		<section id="contact">
 			<div class="inner">
 				<section>
-					<form method="post" action="#">
+					<!-- <form method="post" action="#">
 						<div class="fields">
 							<div class="field half">
 								<label for="name">Name</label>
@@ -161,7 +161,58 @@
 							<li><input type="submit" value="Send Message" class="primary" /></li>
 							<li><input type="reset" value="Clear" /></li>
 						</ul>
-					</form>
+					</form> -->
+					<form id="contactForm" method="post" action="#">
+						<div class="fields">
+						  <div class="field half">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="name" required />
+						  </div>
+						  <div class="field half">
+							<label for="email">Email</label>
+							<input type="email" name="email" id="email" required />
+						  </div>
+						  <div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6" required></textarea>
+						  </div>
+						</div>
+						<ul class="actions">
+						  <li><input type="submit" value="Send Message" class="primary" /></li>
+						  <li><input type="reset" value="Clear" /></li>
+						</ul>
+					  </form>
+					  
+					  <script>
+					  document.getElementById("contactForm").addEventListener("submit", async (e) => {
+						e.preventDefault();
+					  
+						const payload = {
+						  name: document.getElementById("name").value.trim(),
+						  email: document.getElementById("email").value.trim(),
+						  message: document.getElementById("message").value.trim(),
+						  page: location.pathname,
+						  userAgent: navigator.userAgent
+						};
+					  
+						try {
+						  const res = await fetch("https://v28e5o6uj4.execute-api.eu-central-1.amazonaws.com/prod/contact", {
+							method: "POST",
+							headers: { "Content-Type": "application/json" },
+							body: JSON.stringify(payload),
+							mode: "cors"
+						  });
+					  
+						  if (!res.ok) throw new Error(await res.text());
+						  alert("Thanks! Your message was sent.");
+						  e.target.reset();
+						} catch (err) {
+						  console.error(err);
+						  alert("Sorry, something went wrong. Please try again later.");
+						}
+					  });
+					  </script>
+					  
 				</section>
 				<section class="split">
 					<section>
