@@ -2811,7 +2811,41 @@ input, select, textarea {
 			}
 
 			.tiles article:hover:before {
+				opacity: 0.85;
+			}
+
+			.tiles article.tile-solid {
+				background-image: none !important;
+				background-position: initial;
+				background-size: auto;
+			}
+
+			.tiles article.tile-solid:after {
+				background-color: transparent;
+			}
+
+			.tiles article.tile-solid:before {
 				opacity: 0;
+			}
+
+			.tiles article.tile-solid:hover:before {
+				opacity: 1;
+			}
+
+			.tiles article.tile-chefcoco {
+				background-color: #163a36;
+			}
+
+			.tiles article.tile-chefcoco:before {
+				background-color: #24564f;
+			}
+
+			.tiles article.tile-consultfox {
+				background-color: #22345b;
+			}
+
+			.tiles article.tile-consultfox:before {
+				background-color: #304a7f;
 			}
 
 			.tiles article.is-transitioning {

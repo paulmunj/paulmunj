@@ -127,16 +127,19 @@
 				x;
 
 			// Image.
+				if ($this.data('no-bg-image') !== true && $img.length > 0) {
 
-				// Set image.
-					$this.css('background-image', 'url(' + $img.attr('src') + ')');
+					// Set image.
+						$this.css('background-image', 'url(' + $img.attr('src') + ')');
 
-				// Set position.
-					if (x = $img.data('position'))
-						$image.css('background-position', x);
+					// Set position.
+						if (x = $img.data('position'))
+							$image.css('background-position', x);
 
-				// Hide original.
-					$image.hide();
+					// Hide original.
+						$image.hide();
+
+				}
 
 			// Link.
 				if ($link.length > 0) {

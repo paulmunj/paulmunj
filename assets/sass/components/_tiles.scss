@@ -92,8 +92,42 @@
 
 			&:hover {
 				&:before {
-					opacity: 0;
+					opacity: 0.85;
 				}
+			}
+
+			&.tile-solid {
+				background-image: none !important;
+				background-position: initial;
+				background-size: auto;
+			}
+
+			&.tile-solid:after {
+				background-color: transparent;
+			}
+
+			&.tile-solid:before {
+				opacity: 0;
+			}
+
+			&.tile-solid:hover:before {
+				opacity: 1;
+			}
+
+			&.tile-chefcoco {
+				background-color: #163a36;
+			}
+
+			&.tile-chefcoco:before {
+				background-color: #24564f;
+			}
+
+			&.tile-consultfox {
+				background-color: #22345b;
+			}
+
+			&.tile-consultfox:before {
+				background-color: #304a7f;
 			}
 
 			&.is-transitioning {
